@@ -1,0 +1,23 @@
+body 
+{
+	font-family: 'Open Sans', sans-serif;
+	background-color: #ffffff;
+	color: #848484 !important;
+}
+
+a {
+	color: #848484 !important;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+/*
+html { 
+  background: url('../images/sky.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}*/
