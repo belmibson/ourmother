@@ -1,27 +1,28 @@
-body
-{
-	font-family: 'Open Sans', sans-serif;
-	background-color: #ffffff;
-	color: #848484 !important;
-}
-
-a {
-	color: #848484 !important;
+canvas {
+	cursor:pointer
 }
 
 .pointer {
 	cursor: pointer;
 }
 
-canvas {
-	cursor:pointer
+#backup {
+	width: 100%;
+	text-align: center;
+	margin-top: 7%;
 }
 
-/*
-html {
-  background: url('../images/sky.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}*/
+#backup img {
+	position: relative;
+	left: 100%;
+	margin-left: -200%;
+}
+
+@media (max-width: 768px) {
+  	#stratus {
+  		display: none !important;
+  	}
+}
+
+
+

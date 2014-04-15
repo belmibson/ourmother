@@ -13,8 +13,7 @@ var clock = new THREE.Clock();
 // custom global variables
 var cube;
 
-init();
-animate();
+
 
 // FUNCTIONS
 function init()
@@ -156,3 +155,30 @@ function render()
 {
   renderer.render( scene, camera );
 }
+
+var load_backup = function(){
+  var c = $('<div id="backup"></div>');
+  $('body').append(c);
+  $('#backup').append('<img src="images/backup.jpg">'); 
+}
+
+if (Modernizr.canvas){
+  if (window.innerWidth > 768){
+      init();
+      animate();
+  }
+  else {
+    load_backup();
+  }
+}
+else {
+  load_backup();
+}
+
+// Load soundcloud widget
+$(document).ready(function(){
+  $.stratus({
+      links: 'https://soundcloud.com/ellie-5/the-beach-boys-i-get-around',
+      auto_play: true,
+  });
+});
