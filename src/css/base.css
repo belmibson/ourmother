@@ -22,6 +22,10 @@ canvas {
   	#stratus {
   		display: none !important;
   	}
+
+  	#backup{
+  		margin-top: 20%;
+  	}
 }
 
 
