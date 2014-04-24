@@ -18,13 +18,20 @@ canvas {
 	margin-left: -200%;
 }
 
+img {
+   position: absolute;
+   top: 50%;
+   left: 0%;
+   width: 100%;
+}
+
 @media (max-width: 768px) {
   	#stratus {
   		display: none !important;
   	}
 
   	#backup{
-  		margin-top: 20%;
+  		margin-top: 15%;
   	}
 }
 

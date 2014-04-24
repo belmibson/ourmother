@@ -29,7 +29,7 @@ function init()
   camera.lookAt(scene.position);
   // RENDERER
   if ( Detector.webgl )
-    renderer = new THREE.WebGLRenderer( {antialias:true} );
+    renderer = new THREE.WebGLRenderer( {alpha:true} );
   else
     renderer = new THREE.CanvasRenderer();
   renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -157,10 +157,22 @@ function render()
 }
 
 var load_backup = function(){
-  var c = $('<div id="backup"></div>');
-  $('body').append(c);
-  $('#backup').append('<img src="images/backup.jpg">'); 
+  $('#linky').remove();
+  $('body').append('<a id="linky" href="https://soundcloud.com/ourmother"><img id="sun" src="images/background.jpg"></a>');
+  var $sunny_boy = $('#sun');
+  var width = $sunny_boy.width();
+  $('#sun').css({
+    height: width,
+    marginTop: width / -2,
+    marginBottom: width / -2
+  });
 }
+
+window.addEventListener("orientationchange", function() {
+  // Announce the new orientation number
+  load_backup();
+
+}, false);
 
 if (Modernizr.canvas){
   if (window.innerWidth > 768){
