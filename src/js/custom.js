@@ -157,22 +157,33 @@ function render()
 }
 
 var load_backup = function(){
+  $('#centre').remove();
   $('#linky').remove();
-  $('body').append('<a id="linky" href="https://soundcloud.com/ourmother"><img id="sun" src="images/background.jpg"></a>');
-  var $sunny_boy = $('#sun');
-  var width = $sunny_boy.width();
-  $('#sun').css({
-    height: width,
-    marginTop: width / -2,
-    marginBottom: width / -2
-  });
+  
+
+  if (window.innerHeight > window.innerWidth){
+      $('body').append('<a id="linky" href="https://soundcloud.com/ourmother"><img id="sun" src="images/background.jpg"></a>');
+      var $sunny_boy = $('#sun');
+      var width = $sunny_boy.width();
+      $('#sun').css({
+        height: width,
+        marginTop: width / -2,
+        marginBottom: width / -2
+      });    
+  }
+  else {
+    $('body').append('<div id="centre"><a id="linky" href="https://soundcloud.com/ourmother"><img id="sun" src="images/background.jpg"></a></div>');
+    var $sunny_boy = $('#sun');
+    $sunny_boy.css({
+      position: 'static'
+    });
+    $('#centre').css({
+      width: window.innerHeight,
+      height: window.height,
+      margin: '0 auto'
+    })
+  }
 }
-
-window.addEventListener("orientationchange", function() {
-  // Announce the new orientation number
-  load_backup();
-
-}, false);
 
 if (Modernizr.canvas){
   if (window.innerWidth > 768){
@@ -187,10 +198,18 @@ else {
   load_backup();
 }
 
-// Load soundcloud widget
+// Load soundcloud widget.
 $(document).ready(function(){
   $.stratus({
       links: 'https://soundcloud.com/ellie-5/the-beach-boys-i-get-around',
       auto_play: true,
   });
 });
+
+window.addEventListener("orientationchange", function() {
+  load_backup();
+}, false);
+
+window.addEventListener('resize', function(){
+  load_backup()
+}, false);
