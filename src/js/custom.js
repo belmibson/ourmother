@@ -6,7 +6,6 @@ $(document).ready(function(){
   var load_backup = function(){
     $('#centre').remove();
     $('#linky').remove();
-    
 
     if (window.innerHeight > window.innerWidth){
         $('body').append('<a id="linky" href="https://soundcloud.com/ourmother"><img id="sun" src="images/background.jpg"></a>');
@@ -30,7 +29,7 @@ $(document).ready(function(){
         margin: '0 auto'
       })
     }
-  }
+  };
 
   if (Modernizr.canvas){
 
@@ -63,15 +62,19 @@ $(document).ready(function(){
 
   // Setup the hidden soundcloud widget.
   sc_widget = SC.Widget($('#widget').get(0));
+
   sc_widget.bind(SC.Widget.Events.READY, function(){
     sc_widget.play();
     $('#play').on('click', function(){
       console.log('hi');
       sc_widget.play();
       sc_widget.setVolume(100);
+      return false;
     });
+
     $('#pause').on('click', function(){
       sc_widget.pause();
+      return false;
     });
   });
 
