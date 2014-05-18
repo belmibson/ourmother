@@ -61,6 +61,7 @@ $(document).ready(function(){
   }, false);
 
   // Setup the hidden soundcloud widget.
+  /*
   sc_widget = SC.Widget($('#widget').get(0));
 
   sc_widget.bind(SC.Widget.Events.READY, function(){
@@ -81,7 +82,8 @@ $(document).ready(function(){
   sc_widget.bind(SC.Widget.Events.PLAY, function(){
     console.log('playing')
   })
-
+  
+  */
 
 });
 
