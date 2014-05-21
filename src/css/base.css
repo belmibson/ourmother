@@ -29,6 +29,10 @@ img {
   display: none;  
 }
 
+.lion-sound {
+  display: none;
+}
+
 @media (max-width: 768px) {
 
   	#backup{
