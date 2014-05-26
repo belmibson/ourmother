@@ -123,17 +123,15 @@ var Terrain = (function(){
           */
 
         terrain_mesh = new THREE.Mesh(terrain_geometry, terrain_material);
-        terrain_mesh.rotation.x = -Math.PI / 2.0;
-        terrain_mesh.rotation.y = -Math.PI / 2.0;    
-        terrain_mesh.rotation.z = -Math.PI / 2.0;
+        terrain_mesh.rotation.x = -Math.PI / 4.0;
+        terrain_mesh.rotation.y = -Math.PI / 4.0;    
+        terrain_mesh.rotation.z = -Math.PI / 3.0;
 
         scene.add(terrain_mesh);
     }
 
     function init() {
-        if (!Detector.webgl){
-           return false;
-        }
+        if (!Detector.webgl) return false;
 
         renderer = new THREE.WebGLRenderer({
             antialias: true
@@ -142,8 +140,6 @@ var Terrain = (function(){
         renderer.setClearColor(0xffffff, 1.0);
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
-
-        console.log('hi')
 
         scene = new THREE.Scene();
 
@@ -189,12 +185,11 @@ var Terrain = (function(){
 
     return {
         load: function(){
-            if(!init()){
-                console.log('no webgl')
-                return false;
-            };
+            if(!init()) return false;
             generate();
             animate();
+            return true;
+
         }
     };
 
